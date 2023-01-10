@@ -2,13 +2,21 @@ package br.com.email.mania;
 
 import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+
 import org.junit.Test;
 
 public class AppTest {
+	
+	private String userName = "SeuEmail";
+	private String password = "SuaSenha";
 
 	@Test
 	public void testeEmail() {
 		
+		try {
 		/*Olhar as configurações do SMTP do seu email de origem*/
 		Properties properties = new Properties();
 		properties.put("mail.smtp.aith", "true");//Autorização
@@ -17,6 +25,16 @@ public class AppTest {
 		properties.put("mail.smtp.port", "456");// Porta padrão do servidor
 		properties.put("main.smtp.socketFactory.prot", "465");//Especifica a porta a ser conectada pelo socket
 		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");//Classe socket de conexão ao SMTP
+	
+		Session session = Session.getInstance(properties, new Authenticator() {
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(userName, password);
+			}
+		});
+	
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 }
