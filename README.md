@@ -28,5 +28,13 @@ Junit 4.11<br/>
 JavaMail 1.6.2<br/>
 itextpdf<br/>
 
+🤝 Contribuindo
+Este repositório foi criado para fins de estudo, então contribua com ele. Se te ajudei de alguma forma, ficarei feliz em saber. E caso você conheça alguém que se identidique com o conteúdo, não deixe de compatilhar.<br/>
+
+Se possível:<br/>
+
+⭐️ Star o projeto<br/>
+
+🐛 Encontrar e relatar issues<br/>
 
 linkedin: https://www.linkedin.com/in/jefferson-da-silva-leal/
