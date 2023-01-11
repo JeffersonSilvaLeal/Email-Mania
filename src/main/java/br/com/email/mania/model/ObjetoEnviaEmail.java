@@ -32,7 +32,7 @@ public class ObjetoEnviaEmail {
 		
 	}
 	
-	public void enviarEmail() {
+	public void enviarEmail(boolean envioHtml) {
 		try {
 		Properties properties = new Properties();
 		properties.put("mail.smtp.ssl.trust", "*");
@@ -57,7 +57,12 @@ public class ObjetoEnviaEmail {
 		message.setFrom(new InternetAddress(userName, nomeRemetente));// Quem está enviando
 		message.setRecipients(Message.RecipientType.TO, toUser);// Email de destino
 		message.setSubject(assuntoEmail);// Assunto do email
-		message.setText(mensagemEmail);
+		
+		if(envioHtml) {
+			message.setContent(mensagemEmail, "text/html; charset=utf-8");
+		}else {
+			message.setText(mensagemEmail);
+		}
 
 		Transport.send(message);
 		}catch(Exception e) {
