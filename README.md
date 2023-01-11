@@ -18,16 +18,15 @@ testeListaEmailAnexos: envio de varios anexos no email.
 
 <h2>Email com vários anexos</h2>
 
-testeListaEmailAnexos: envio de varios anexos no email.
 ![emailVariosAnexos](https://user-images.githubusercontent.com/74872760/211885587-f0ccc1e2-ef32-44b9-b9b7-fd5814730e8d.png)
 
 
 ✔️ Tecnologias utilizadas
-maven
-java 1.7
-Junit 4.11
-JavaMail 1.6.2
-itextpdf
+maven<br/>
+java 1.7<br/>
+Junit 4.11<br/>
+JavaMail 1.6.2<br/>
+itextpdf<br/>
 
 
 linkedin: https://www.linkedin.com/in/jefferson-da-silva-leal/
