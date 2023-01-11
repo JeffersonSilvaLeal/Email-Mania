@@ -1,6 +1,5 @@
 package br.com.email.mania;
 
-import java.net.InterfaceAddress;
 import java.util.Properties;
 
 import javax.mail.Address;
@@ -26,6 +25,7 @@ public class AppTest {
 		try {
 		/*Olhar as configurações do SMTP do seu email de origem*/
 		Properties properties = new Properties();
+		properties.put("mail.smtp.ssl.trust", "*");
 		properties.put("mail.smtp.auth", "true");//Autorização
 		properties.put("mail.smtp.starttls", "true");//Autenticação
 		properties.put("mail.smtp.host", "smtp.gmail.com");// Servidor do gmail
@@ -40,13 +40,13 @@ public class AppTest {
 			}
 		});
 		
-		Address[] toUser = InternetAddress.parse("taianfut@gmail.com, drankhar@gmail.com, waltermsbr@gmail.com");
+		Address[] toUser = InternetAddress.parse("taianfut@gmail.com, drankhar@gmail.com");
 	
 		Message message = new MimeMessage(session);
-		message.setFrom(new InternetAddress(userName));// Quem está enviando
+		message.setFrom(new InternetAddress(userName, "Jefferson da Silva Leal"));// Quem está enviando
 		message.setRecipients(Message.RecipientType.TO, toUser);// Email de destino
 		message.setSubject("Olá meu amigo Desenvolvedor");// Assunto do email
-		message.setText("Olá Walter e Taian, estou testando o serviço do JavaMail chegou para voçês vlw?");
+		message.setText("Tentando novamente");
 		
 		Transport.send(message);
 		
